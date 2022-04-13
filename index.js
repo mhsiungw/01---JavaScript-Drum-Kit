@@ -13,10 +13,7 @@ class Drum {
             }
 
             if (event === 'keydown') {
-                console.log(e.key)
-                keyEl = Array.from(document.querySelectorAll('kbd'))
-                    .find((k) => e.key.toUpperCase() == k.innerText.toUpperCase())
-                    ?.closest('.key')
+                keyEl = Array.from(document.querySelectorAll('.key')).find((k) => e.keyCode == k.dataset.key)
             }
             if (!keyEl) return
             handler(keyEl)
